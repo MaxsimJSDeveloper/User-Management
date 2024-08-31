@@ -12,7 +12,7 @@ const User: React.FC<UserProps> = ({ user }) => {
   return (
     <div className={css.user}>
       <div className={css.avatar}>
-        <PiUserCircleLight size={60} />
+        <PiUserCircleLight size={70} />
       </div>
 
       <h3 className={css.title}>{name}</h3>

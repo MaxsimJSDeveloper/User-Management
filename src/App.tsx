@@ -1,21 +1,13 @@
-import { Container } from "@mui/material";
-
 import FilterInput from "./components/FilterInput/FilterInput";
 import UsersList from "./components/UsersList/UsersList";
 import Title from "./components/Title/Title";
 
-import "./App.css";
+import Container from "./components/Container/Container";
 
 function App() {
   return (
     <>
-      <Container
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
+      <Container>
         <Title />
         <FilterInput />
         <UsersList />

@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  transition: transform 0.3s; /* Smooth scale on hover */
+  transition: transform 0.3s;
 }
 
 .user:hover {
@@ -11,7 +11,8 @@
 }
 
 .avatar {
-  margin-bottom: 8px; /* Add spacing below the avatar */
+  margin-bottom: 8px;
+  color: #005252;
 }
 
 .title {
@@ -21,8 +22,6 @@
 }
 
 .userInfo {
-  color: #666666;
-  line-height: 1.5;
   width: 100%;
 }
 

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useId } from "react";
 import { useDispatch } from "react-redux";
 import { setFilter } from "../../redux/users/slice";
-import TextField from "@mui/material/TextField";
+
+import css from "./FilterInput.module.css";
 
 const UserFilter: React.FC = () => {
   const dispatch = useDispatch();
@@ -10,21 +11,19 @@ const UserFilter: React.FC = () => {
     dispatch(setFilter(event.target.value.trim()));
   };
 
+  const id = useId();
+
   return (
-    <TextField
-      variant="outlined"
-      placeholder="Search..."
-      onChange={handleFilterChange}
-      fullWidth
-      sx={{
-        marginBottom: { xs: 2, sm: 3 },
-        marginTop: { xs: 2, sm: 3 },
-        height: { xs: "40px", sm: "48px", md: "56px" },
-        "& .MuiInputBase-input": {
-          padding: "10px 14px",
-        },
-      }}
-    />
+    <form className={css.searchBoxContainer}>
+      <label htmlFor={`${id}-s`}>Find user</label>
+      <input
+        type="text"
+        onChange={handleFilterChange}
+        className={css.searchBoxInput}
+        id={`${id}-s`}
+        placeholder="Search..."
+      />
+    </form>
   );
 };
 

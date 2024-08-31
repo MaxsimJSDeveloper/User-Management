@@ -14,9 +14,8 @@ body {
   font-weight: 400;
   font-size: 16px;
   letter-spacing: 0.04em;
-  color: #000;
-  background: linear-gradient(to bottom right, #79c2c6, #007d7e);
-  min-height: 100vh;
+  color: #666666;
+  line-height: 1.5;
 }
 
 h1,
@@ -37,19 +36,4 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-a {
-  color: currentColor;
-  text-decoration: none;
-}
-
-button {
-  cursor: pointer;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
 }
