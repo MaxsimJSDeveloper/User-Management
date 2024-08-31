@@ -16,7 +16,14 @@ const UserFilter: React.FC = () => {
       placeholder="Search..."
       onChange={handleFilterChange}
       fullWidth
-      style={{ marginBottom: 24, marginTop: 24 }}
+      sx={{
+        marginBottom: { xs: 2, sm: 3 },
+        marginTop: { xs: 2, sm: 3 },
+        height: { xs: "40px", sm: "48px", md: "56px" },
+        "& .MuiInputBase-input": {
+          padding: "10px 14px",
+        },
+      }}
     />
   );
 };

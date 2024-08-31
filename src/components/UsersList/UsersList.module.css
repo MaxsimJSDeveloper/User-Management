@@ -2,6 +2,7 @@
   display: flex;
   gap: 24px 32px;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   width: 100%;
 }
@@ -12,9 +13,18 @@
   align-items: center;
   background-color: #cee6ea;
   border-radius: 16px;
-  width: 310px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .userItem:hover {
   background-color: #b4e7f1;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 400px) {
+  .userItem {
+    width: 320px;
+  }
 }

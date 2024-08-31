@@ -2,9 +2,17 @@
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: "Titillium Web", sans-serif;
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter_18pt-Regular.ttf") format("truetype");
   font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
   letter-spacing: 0.04em;
   color: #000;
 }

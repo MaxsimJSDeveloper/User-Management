@@ -1,39 +1,19 @@
 import React from "react";
-import { ListItem, ListItemText, Typography } from "@mui/material";
 import { UserProps } from "./User.types";
+import css from "./User.module.css";
 
 const User: React.FC<UserProps> = ({ user }) => {
   const { name, username, email, phone } = user;
 
   return (
-    <ListItem>
-      <ListItemText
-        primary={
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              marginBottom: 12,
-            }}
-          >
-            <Typography variant="h6">{name}</Typography>
-          </div>
-        }
-        secondary={
-          <>
-            <Typography variant="body2">
-              <strong>Username:</strong> {username}
-            </Typography>
-            <Typography variant="body2">
-              <strong>Email:</strong> {email}
-            </Typography>
-            <Typography variant="body2">
-              <strong>Phone:</strong> {phone}
-            </Typography>
-          </>
-        }
-      />
-    </ListItem>
+    <div className={css.user}>
+      <h3 className={css.title}>{name}</h3>
+      <div className={css.userInfo}>
+        <p>Username: {username}</p>
+        <p>Email: {email}</p>
+        <p>Phone: {phone}</p>
+      </div>
+    </div>
   );
 };
 

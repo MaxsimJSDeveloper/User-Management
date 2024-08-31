@@ -1,0 +1,22 @@
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.title {
+  margin-bottom: 8px;
+}
+
+.userInfo {
+  color: #3c3c3c;
+  font-size: 15px;
+  width: 100%;
+}
+
+@media (min-width: 400px) {
+  .userInfo {
+    font-size: 16px;
+  }
+}

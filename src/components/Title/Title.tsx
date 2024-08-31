@@ -6,7 +6,10 @@ export const Title = () => {
       variant="h2"
       component="h1"
       gutterBottom
-      style={{ marginTop: 20, marginBottom: 20 }}
+      sx={{
+        marginTop: 5,
+        fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem", lg: "3" },
+      }}
     >
       User Management App
     </Typography>
