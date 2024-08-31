@@ -1,14 +1,6 @@
 import React from "react";
 import { ListItem, ListItemText, Typography } from "@mui/material";
-
-interface UserProps {
-  user: {
-    name: string;
-    username: string;
-    email: string;
-    phone: string;
-  };
-}
+import { UserProps } from "./User.types";
 
 const User: React.FC<UserProps> = ({ user }) => {
   const { name, username, email, phone } = user;

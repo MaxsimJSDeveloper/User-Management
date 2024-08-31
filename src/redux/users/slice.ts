@@ -16,23 +16,6 @@ const initialState: UsersState = {
   filter: "",
 };
 
-export const handlePending = (state: UsersState) => {
-  state.isLoading = true;
-};
-
-export const handleRejected = (
-  state: UsersState,
-  action: PayloadAction<
-    unknown,
-    string,
-    { arg: void; requestId: string; requestStatus: "rejected" },
-    SerializedError
-  >
-) => {
-  state.isLoading = false;
-  state.error = action.error.message || "Something went wrong";
-};
-
 const usersSlice = createSlice({
   name: "users",
   initialState,
@@ -43,8 +26,24 @@ const usersSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getAllUsers.pending, handlePending)
-      .addCase(getAllUsers.rejected, handleRejected)
+      .addCase(getAllUsers.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(
+        getAllUsers.rejected,
+        (
+          state,
+          action: PayloadAction<
+            unknown,
+            string,
+            { arg: void; requestId: string; requestStatus: "rejected" },
+            SerializedError
+          >
+        ) => {
+          state.isLoading = false;
+          state.error = action.error.message || "Something went wrong";
+        }
+      )
       .addCase(
         getAllUsers.fulfilled,
         (state, action: PayloadAction<User[]>) => {

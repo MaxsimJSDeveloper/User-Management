@@ -16,7 +16,7 @@ const UserFilter: React.FC = () => {
       placeholder="Search..."
       onChange={handleFilterChange}
       fullWidth
-      margin="normal"
+      style={{ marginBottom: 24, marginTop: 24 }}
     />
   );
 };

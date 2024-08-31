@@ -31,7 +31,7 @@ export const UsersList = () => {
           ))}
         </ul>
       ) : (
-        <h1 className={css.title}>user list is empty</h1>
+        <h2>User not found</h2>
       )}
     </div>
   );

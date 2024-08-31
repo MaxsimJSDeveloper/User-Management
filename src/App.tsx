@@ -1,7 +1,10 @@
 import { Container } from "@mui/material";
-import "./App.css";
+
 import FilterInput from "./components/FilterInput/FilterInput";
 import UsersList from "./components/UsersList/UsersList";
+import Title from "./components/Title/Title";
+
+import "./App.css";
 
 function App() {
   return (
@@ -13,7 +16,7 @@ function App() {
           alignItems: "center",
         }}
       >
-        <h1>User Management</h1>
+        <Title />
         <FilterInput />
         <UsersList />
       </Container>
