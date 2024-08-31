@@ -15,6 +15,8 @@ body {
   font-size: 16px;
   letter-spacing: 0.04em;
   color: #000;
+  background: linear-gradient(to bottom right, #79c2c6, #007d7e);
+  min-height: 100vh;
 }
 
 h1,
