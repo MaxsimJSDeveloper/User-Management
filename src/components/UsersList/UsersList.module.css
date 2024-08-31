@@ -10,7 +10,11 @@
   padding: 16px;
   display: flex;
   align-items: center;
-  background-color: #d9ebee;
+  background-color: #cee6ea;
   border-radius: 16px;
   width: 310px;
+}
+
+.userItem:hover {
+  background-color: #b4e7f1;
 }

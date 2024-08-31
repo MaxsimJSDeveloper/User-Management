@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction, SerializedError } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { getAllUsers } from "./operations";
 import { User } from "../../types/general";
 
@@ -29,21 +29,11 @@ const usersSlice = createSlice({
       .addCase(getAllUsers.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(
-        getAllUsers.rejected,
-        (
-          state,
-          action: PayloadAction<
-            unknown,
-            string,
-            { arg: void; requestId: string; requestStatus: "rejected" },
-            SerializedError
-          >
-        ) => {
-          state.isLoading = false;
-          state.error = action.error.message || "Something went wrong";
-        }
-      )
+      .addCase(getAllUsers.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error =
+          action.payload || action.error.message || "Something went wrong";
+      })
       .addCase(
         getAllUsers.fulfilled,
         (state, action: PayloadAction<User[]>) => {

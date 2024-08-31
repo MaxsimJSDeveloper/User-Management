@@ -7,6 +7,7 @@ import { getAllUsers } from "../../redux/users/operations";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../redux/store";
 import { selectFilteredUsers } from "../../redux/filters/selectors";
+import Loader from "../Loader/Loader";
 
 export const UsersList = () => {
   const isLoading = useSelector(selectIsLoading);
@@ -21,7 +22,7 @@ export const UsersList = () => {
 
   return (
     <div className={css.wrap}>
-      {isLoading && !error && <h1>Loading</h1>}
+      {isLoading && !error && <Loader />}
       {filteredUsers.length > 0 ? (
         <ul className={css.userList}>
           {filteredUsers.map((user) => (
