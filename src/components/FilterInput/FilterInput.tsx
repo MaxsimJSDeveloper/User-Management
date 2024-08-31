@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { setFilter } from "../../redux/users/slice";
+import TextField from "@mui/material/TextField";
 
 const UserFilter: React.FC = () => {
   const dispatch = useDispatch();
@@ -10,13 +11,13 @@ const UserFilter: React.FC = () => {
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Search..."
-        onChange={handleFilterChange}
-      />
-    </div>
+    <TextField
+      variant="outlined"
+      placeholder="Search..."
+      onChange={handleFilterChange}
+      fullWidth
+      margin="normal"
+    />
   );
 };
 
