@@ -6,12 +6,14 @@ interface UsersState {
   users: User[];
   isLoading: boolean;
   error: string | null;
+  filter: string;
 }
 
 const initialState: UsersState = {
   users: [],
   isLoading: false,
   error: null,
+  filter: "",
 };
 
 export const handlePending = (state: UsersState) => {
@@ -34,7 +36,11 @@ export const handleRejected = (
 const usersSlice = createSlice({
   name: "users",
   initialState,
-  reducers: {},
+  reducers: {
+    setFilter(state, action: PayloadAction<string>) {
+      state.filter = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getAllUsers.pending, handlePending)
@@ -50,4 +56,5 @@ const usersSlice = createSlice({
   },
 });
 
+export const { setFilter } = usersSlice.actions;
 export const usersReducer = usersSlice.reducer;
