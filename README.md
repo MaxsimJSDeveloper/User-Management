@@ -1,50 +1,23 @@
-# React + TypeScript + Vite
+# User Management
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+This project is a **User Management Table** that fetches and displays user data from a mock API ([JSONPlaceholder](https://jsonplaceholder.typicode.com/users)) with advanced filtering options. Users can filter the table by **name**, **username**, **email**, and **phone**. The app uses **Redux** for state management and is built with **TypeScript** and **React**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Fetch Users**: Retrieves user data from the [JSONPlaceholder API](https://jsonplaceholder.typicode.com/users).
+- **User Table**: Displays users in a table format with the following columns: Name, Username, Email, Phone.
+- **Dynamic Filtering**: Allows filtering by any column (Name, Username, Email, Phone) with real-time updates as you type.
+- **State Management with Redux**: Redux or Redux Toolkit is used to manage the global state.
+- **Type Safety**: Ensures type safety across the app with TypeScript.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Technologies
 
-- Configure the top-level `parserOptions` property like this:
+- **TypeScript**
+- **React**
+- **Redux / Redux Toolkit**
+- **CSS**
+- **HTML**
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
